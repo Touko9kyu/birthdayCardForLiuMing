@@ -89,6 +89,21 @@
       margin: 0 10px;
       flex: 0 1 auto;
     }
+    .brithday-date {
+      position: absolute;
+      top: 240px;
+      display: flex;
+      justify-content:center;
+      width: 100%;
+      opacity: .6;
+      transition: all 2s;
+    }
+    .brithday-date> div {
+      height: 50px;
+      width: 50px;
+      margin: 0 20px;
+      flex: 0 1 auto;
+    }
 
     @keyframes star-scale {
       from {
@@ -141,6 +156,17 @@
       <div id="kuai"></div>
       <div id="le"></div>
       <div id="ya"></div>
+    </div>
+    <div class="brithday-date">
+      <div id="er1"></div>
+      <div id="ling1"></div>
+      <div id="er2"></div>
+      <div id="si"></div>
+      <div id="dot"></div>
+      <div id="shi"></div>
+      <div id="er3"></div>
+      <div id="yue"></div>
+      <div id="qi"></div>
     </div>
     <canvas id="my-canvas"></canvas>
     <div class="land">
@@ -281,6 +307,10 @@
       strokeColor: '#87db92'
     };
 
+    const DATE_CONFIG = {
+      ...BASE_CONFIG,
+      strokeColor: '#02bebc'
+    };
     const getWriterList = () => {
       let writerList = [];
       writerList.push(HanziWriter.create('liu', '刘', NAME_CONFIG));
@@ -290,6 +320,15 @@
       writerList.push(HanziWriter.create('kuai', '快', WRITER_CONFIG));
       writerList.push(HanziWriter.create('le', '乐', WRITER_CONFIG));
       writerList.push(HanziWriter.create('ya', '吖', WRITER_CONFIG));
+      writerList.push(HanziWriter.create('er1', '二', DATE_CONFIG));
+      writerList.push(HanziWriter.create('ling1', '零', DATE_CONFIG));
+      writerList.push(HanziWriter.create('er2', '二', DATE_CONFIG));
+      writerList.push(HanziWriter.create('si', '四', DATE_CONFIG));
+      writerList.push(HanziWriter.create('dot', '年', DATE_CONFIG));
+      writerList.push(HanziWriter.create('shi', '十', DATE_CONFIG));
+      writerList.push(HanziWriter.create('er3', '二', DATE_CONFIG));
+      writerList.push(HanziWriter.create('yue', '月', DATE_CONFIG));
+      writerList.push(HanziWriter.create('qi', '七', DATE_CONFIG));
       return writerList;
     }
 
